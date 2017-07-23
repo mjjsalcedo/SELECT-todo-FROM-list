@@ -4,7 +4,7 @@ CREATE USER michael WITH ENCRYPTED PASSWORD 'stonebreaker';
 
 DROP DATABASE IF EXISTS todo_app;
 
-CREATE DATABASE todo_app WITH OWNER michael;
+CREATE DATABASE todo_app;
 
 \c todo_app;
 
@@ -26,7 +26,7 @@ ALTER TABLE tasks ALTER updated_at SET NOT NULL;
 ALTER TABLE tasks ALTER updated_at SET DEFAULT NOW();
 
 INSERT INTO tasks
-VALUES('default value', 'Study SQL', 'Complete this exercise', now(), now(), NULL);
+VALUES(default , 'Study SQL', 'Complete this exercise', now(), now(), NULL);
 
 INSERT INTO tasks(title, description)
 VALUES ('Study PostgreSQL', 'Read all the documentation');

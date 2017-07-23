@@ -24,3 +24,46 @@ ALTER TABLE tasks ADD COLUMN completed_at timestamp without time zone NULL DEFAU
 ALTER TABLE tasks ALTER updated_at SET NOT NULL;
 
 ALTER TABLE tasks ALTER updated_at SET DEFAULT NOW();
+
+INSERT INTO tasks
+VALUES('default value', 'Study SQL', 'Complete this exercise', now(), now(), NULL);
+
+INSERT INTO tasks(title, description)
+VALUES ('Study PostgreSQL', 'Read all the documentation');
+
+SELECT tilte
+FROM tasks
+WHERE completed_at IS NULL
+
+UPDATE tasks SET completed_at = NOW();WHERE title = 'Study SQL';
+
+SELECT title, description
+FROM tasks
+WHERE tasks IS NULL;
+
+SELECT *
+FROM tasks
+ORDER BY created_at DESC;
+
+INSERT INTO tasks(title, description)
+VALUES ('mistake 1', 'a test entry'),('mistake 2', 'another test entry'),('third mistake', 'another test entry');
+
+SELECT title
+FROM tasks
+WHERE title LIKE '%mistake%';
+
+DELETE
+FROM tasks
+WHERE title = 'mistake 1';
+
+SELECT title, description
+FROM tasks
+WHERE title LIKE '%mistake%';
+
+DELETE
+FROM tasks
+WHERE title LIKE '%mistake%';
+
+SELECT *
+FROM tasks
+ORDER BY title ASC;
